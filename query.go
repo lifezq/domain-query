@@ -72,6 +72,7 @@ func QueryDomainValid(chars []byte, fixed int8) {
 
 	if fixed == 0 {
 		QueryDomains([]string{string(chars) + ".com"})
+		time.Sleep(15 * time.Second)
 		return
 	}
 
@@ -92,6 +93,8 @@ func QueryDomainValid(chars []byte, fixed int8) {
 				}
 
 				QueryDomains(domains)
+
+				time.Sleep(15 * time.Second)
 			}
 
 		case 2:
@@ -100,6 +103,8 @@ func QueryDomainValid(chars []byte, fixed int8) {
 				domains = append(domains, fmt.Sprintf("%c%c%c%c", h, chars[0], chars[1], chars[2])+".com")
 			}
 			QueryDomains(domains)
+
+			time.Sleep(15 * time.Second)
 		}
 
 	case 4:
@@ -118,6 +123,8 @@ func QueryDomainValid(chars []byte, fixed int8) {
 					}
 
 					QueryDomains(domains)
+
+					time.Sleep(15 * time.Second)
 				}
 			}
 
@@ -127,6 +134,8 @@ func QueryDomainValid(chars []byte, fixed int8) {
 				domains = append(domains, fmt.Sprintf("%c%c%c%c%c", h, chars[0], chars[1], chars[2], chars[3])+".com")
 			}
 			QueryDomains(domains)
+
+			time.Sleep(15 * time.Second)
 		}
 	}
 }
